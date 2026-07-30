@@ -26,8 +26,13 @@ export default function Home() {
       playSceneTrack(currentScene);
     }
 
-    if (currentScene >= 4 && currentScene <= 7) {
+    if ((currentScene >= 4 && currentScene <= 7) || currentScene >= 9) {
       unlockScroll();
+      // Only reset scroll when switching to a distinct new scene (9, 10, 11)
+      if (currentScene >= 9) {
+        window.scrollTo(0, 0);
+        lenis?.scrollTo(0, { immediate: true });
+      }
     } else {
       lockScroll();
       // Reset scroll positions to top when locking

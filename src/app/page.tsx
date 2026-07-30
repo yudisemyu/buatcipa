@@ -1,65 +1,114 @@
-import Image from "next/image";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useScroll } from "@/providers/scroll-provider";
+import { LoadingScene, InvitationScene, PasswordScene } from "@/features/intro";
+import { StoryChapters } from "@/features/story";
+import { Timeline } from "@/features/timeline";
+import { MemoryGallery } from "@/features/gallery";
+import { MemoryGame } from "@/features/game";
+import { FakeEnding, Letter, VoiceAndGift, BirthdayEnding } from "@/features/ending";
+import { SceneType } from "@/types";
+import { FloatingDecorations, MiniMusicPlayer } from "@/components/scrapbook";
+
+import { useAudio } from "@/providers/audio-context";
 
 export default function Home() {
+  const [currentScene, setCurrentScene] = useState<SceneType>(1);
+  const { lockScroll, unlockScroll, lenis } = useScroll();
+  const { playSceneTrack } = useAudio();
+
+  // Dynamic Scene-matched Background Music & Scroll coordination
+  useEffect(() => {
+    // Start scene music from Scene 1 onwards (Loading)
+    if (currentScene >= 1) {
+      playSceneTrack(currentScene);
+    }
+
+    if (currentScene >= 4 && currentScene <= 7) {
+      unlockScroll();
+    } else {
+      lockScroll();
+      // Reset scroll positions to top when locking
+      window.scrollTo(0, 0);
+      lenis?.scrollTo(0, { immediate: true });
+    }
+  }, [currentScene, lockScroll, unlockScroll, lenis, playSceneTrack]);
+
+  const handleReplay = () => {
+    // Replay restarts at Scene 2 (Invitation)
+    setCurrentScene(2);
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="flex-1 w-full flex flex-col relative bg-paper-texture">
+      {/* Intro Overlay Stages (Loading, Invitation, Password) */}
+      <AnimatePresence mode="wait">
+        {currentScene === 1 && (
+          <motion.div key="loading" exit={{ opacity: 0 }}>
+            <LoadingScene onComplete={() => setCurrentScene(2)} />
+          </motion.div>
+        )}
+
+        {currentScene === 2 && (
+          <motion.div key="invitation" exit={{ opacity: 0 }}>
+            <InvitationScene onOpen={() => setCurrentScene(3)} />
+          </motion.div>
+        )}
+
+        {currentScene === 3 && (
+          <motion.div key="password" exit={{ opacity: 0 }}>
+            <PasswordScene onSuccess={() => setCurrentScene(4)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Main Unlocked Scrollable Journey (Scenes 4 - 7) */}
+      {currentScene >= 4 && currentScene <= 7 && (
+        <motion.div
+          key="journey"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full flex flex-col relative"
+        >
+          <FloatingDecorations />
+          <StoryChapters />
+          <Timeline />
+          <MemoryGallery />
+          <MemoryGame onComplete={() => setCurrentScene(8)} />
+        </motion.div>
+      )}
+
+      {/* Ending Overlay Stages (Fake Ending, Letter, Voice & Gift, Final Ending) */}
+      <AnimatePresence mode="wait">
+        {currentScene === 8 && (
+          <motion.div key="fake-ending" exit={{ opacity: 0 }}>
+            <FakeEnding onComplete={() => setCurrentScene(9)} />
+          </motion.div>
+        )}
+
+        {currentScene === 9 && (
+          <motion.div key="letter" exit={{ opacity: 0 }}>
+            <Letter onComplete={() => setCurrentScene(10)} />
+          </motion.div>
+        )}
+
+        {currentScene === 10 && (
+          <motion.div key="voice-gift" exit={{ opacity: 0 }}>
+            <VoiceAndGift onComplete={() => setCurrentScene(11)} />
+          </motion.div>
+        )}
+
+        {currentScene === 11 && (
+          <motion.div key="birthday-ending" exit={{ opacity: 0 }}>
+            <BirthdayEnding onReplay={handleReplay} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Now Playing Vinyl Indicator - visible from Scene 1 to Scene 11 */}
+      <MiniMusicPlayer />
+    </main>
   );
 }

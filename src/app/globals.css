@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: #FFF8F7;
+  --color-background-secondary: #FFF2ED;
+  --color-surface: #FFFFFF;
+  --color-primary: #FFD8E6;
+  --color-accent-peach: #F9D7C4;
+  --color-accent-lavender: #E8DFFF;
+  --color-accent-blue: #DCEEFF;
+  --color-accent-mint: #DDF2E4;
+  --color-accent-yellow: #FFF2B8;
+  --color-text-primary: #5D4C4C;
+  --color-text-secondary: #8B7676;
+  --color-border-default: #F1E6E2;
+  --color-divider-default: #F7ECE8;
+
+  --font-fredoka: var(--font-fredoka);
+  --font-nunito: var(--font-nunito);
+  --font-caveat: var(--font-caveat);
+
+  --font-sans: var(--font-nunito);
+  --font-heading: var(--font-fredoka);
+  --font-quote: var(--font-caveat);
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility bg-paper-texture {
+  background-color: var(--color-background);
+  background-image: 
+    radial-gradient(rgba(139, 118, 118, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(139, 118, 118, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility bg-grid-texture {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(139, 118, 118, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 118, 118, 0.025) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-peach);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-nunito);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
 }
+

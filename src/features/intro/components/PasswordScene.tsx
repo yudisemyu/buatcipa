@@ -70,13 +70,13 @@ export const PasswordScene: React.FC<PasswordSceneProps> = ({ onSuccess }) => {
               type="text"
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
-              placeholder="Type your answer here..."
+              placeholder="yuk masukin jawaban kamu"
               disabled={isSuccess}
               className="w-full text-center bg-background border border-border-default rounded-[20px] px-4 py-3 font-sans text-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
             />
 
             <Button type="submit" variant="primary" disabled={isSuccess || !answer.trim()}>
-              Unlocks Journey 🤍
+              Buka Hadiah
             </Button>
           </form>
 
@@ -87,9 +87,8 @@ export const PasswordScene: React.FC<PasswordSceneProps> = ({ onSuccess }) => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className={`text-center font-sans text-sm mt-6 ${
-                  isSuccess ? "text-accent-peach font-semibold" : "text-text-secondary"
-                }`}
+                className={`text-center font-sans text-sm mt-6 ${isSuccess ? "text-accent-peach font-semibold" : "text-text-secondary"
+                  }`}
               >
                 {feedback}
               </motion.p>

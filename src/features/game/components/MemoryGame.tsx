@@ -103,10 +103,10 @@ export const MemoryGame: React.FC<MemoryGameProps> = ({ onComplete }) => {
         <Tape rotation={-2} className="-top-3 left-1/3" color="yellow" />
 
         <h2 className="font-heading text-3xl text-text-primary text-center mb-2">
-          Memory Game
+          game ingatan
         </h2>
         <p className="font-sans text-sm text-text-secondary text-center mb-8 max-w-sm">
-          Match the cozy polaroids to unlock the next chapter of our stories.
+          game tipis tipis yh sebelum masuk chapter selanjutnya hehehe
         </p>
 
         {/* Shuffled Card Grid */}
@@ -179,7 +179,7 @@ export const MemoryGame: React.FC<MemoryGameProps> = ({ onComplete }) => {
                 🎉
               </motion.div>
               <h3 className="font-heading text-2xl text-text-primary mb-2">
-                All Matches Found!
+                yey udah ketemu semua
               </h3>
               <p className="font-sans text-text-secondary mb-6">
                 {MINI_GAME.rewardText}

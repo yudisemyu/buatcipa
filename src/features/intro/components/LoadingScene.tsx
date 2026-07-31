@@ -54,10 +54,10 @@ export const LoadingScene: React.FC<LoadingSceneProps> = ({ onComplete }) => {
 
         {/* Title */}
         <h2 className="font-heading text-2xl text-text-primary mb-2 text-center">
-          Opening our scrapbook...
+          Tunggu yaaaa
         </h2>
         <p className="font-sans text-sm text-text-secondary mb-6 text-center">
-          Preparing your little universe
+          Nyiapin Hadiah kamu
         </p>
 
         {/* Custom Progress Bar */}

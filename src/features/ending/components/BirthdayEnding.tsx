@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Button, Tape, Sparkle } from "@/components/scrapbook";
-import { ENDING_CONTENT } from "@/constants/content";
+import { ENDING_CONTENT, WA_CLAIM } from "@/constants/content";
 import { useAudio } from "@/providers/audio-context";
 import confetti from "canvas-confetti";
 
@@ -18,35 +18,35 @@ const WISHING_STARS = [
     char: "🌟",
     color: "text-amber-400",
     title: "Harapan #1 🌟",
-    wish: "Semoga di umur baru ini Cipa selalu dikelilingi kebahagiaan dan senyuman indah setiap hari!",
+    wish: "Semoga di umur baru ini kamu selalu dikelilingi kebahagiaan dan senyuman indah tiap hari!",
   },
   {
     id: 2,
     char: "✨",
     color: "text-pink-400",
     title: "Harapan #2 ✨",
-    wish: "Semoga semua impian, cita-cita, dan rencana kamu pelan-pelan terwujud tanpa kendala!",
+    wish: "Semoga semua impian, cita-cita, dan rencana kamu pelan-pelan terwujud!",
   },
   {
     id: 3,
     char: "💖",
     color: "text-rose-400",
     title: "Harapan #3 💖",
-    wish: "Semoga kita bisa terus bikin banyak memori manis dan petualangan seru bareng-bareng!",
+    wish: "Semoga kita bisa terus bikin banyak memori sama petualangan seru bareng-bareng!",
   },
   {
     id: 4,
     char: "💫",
     color: "text-purple-400",
     title: "Harapan #4 💫",
-    wish: "Semoga kamu selalu sehat, hatinya selalu damai, dan tidak pernah merasa sendirian!",
+    wish: "Semoga kamu selalu sehat, hatinya selalu damai, dan gapernah merasa sendirian!(kan ada aku)",
   },
   {
     id: 5,
     char: "🤍",
     color: "text-amber-300",
     title: "Harapan #5 🤍",
-    wish: "Tetap jadi Cipa yang baik hati, lucu, dan selalu bikin hari-hariku terasa lebih hangat!",
+    wish: "Tetap jadi Cipa yang baik hati, lucu, dan selalu make my day",
   },
 ];
 
@@ -103,7 +103,7 @@ export const BirthdayEnding: React.FC<BirthdayEndingProps> = ({ onReplay }) => {
       <div className="absolute bottom-[10%] right-[8%] pointer-events-none opacity-45"><Sparkle size={24} /></div>
 
       <div className="max-w-[720px] w-full flex flex-col items-center gap-10 text-center relative z-10">
-        
+
         {/* INTERACTIVE BIRTHDAY CAKE CONTAINER */}
         <motion.div
           className="bg-white border border-primary/30 shadow-soft rounded-[36px] p-8 sm:p-10 w-full flex flex-col items-center relative"
@@ -112,11 +112,11 @@ export const BirthdayEnding: React.FC<BirthdayEndingProps> = ({ onReplay }) => {
           transition={{ duration: 0.8 }}
         >
           <Tape rotation={-2} className="-top-3 left-1/3" color="pink" />
-          
+
           <h2 className="font-heading text-4xl sm:text-5xl text-accent-peach mb-2">
             {ENDING_CONTENT.title}
           </h2>
-          
+
           <p className="font-heading text-lg text-text-secondary mb-6 italic">
             {ENDING_CONTENT.subtitle}
           </p>
@@ -180,7 +180,7 @@ export const BirthdayEnding: React.FC<BirthdayEndingProps> = ({ onReplay }) => {
                   onClick={handleBlowCandle}
                   className="bg-amber-100 border border-amber-300 text-amber-800 font-heading text-sm px-5 py-2 rounded-full shadow-sm flex items-center gap-2"
                 >
-                  🕯️ Make a Wish & Tap to Blow Candle!
+                  🕯️ bikin harapan terus tap buat tiup lilin
                 </motion.button>
               ) : (
                 <motion.div
@@ -188,7 +188,7 @@ export const BirthdayEnding: React.FC<BirthdayEndingProps> = ({ onReplay }) => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="bg-pink-50 border border-primary/40 text-accent-peach font-heading text-sm px-5 py-2.5 rounded-full shadow-sm"
                 >
-                  ✨ Wish Granted! May all your dreams come true, Cipa 💖
+                  ✨ harapan diterima, semoga semuanya bisa kecapai ya 💖
                 </motion.div>
               )}
             </div>
@@ -198,9 +198,20 @@ export const BirthdayEnding: React.FC<BirthdayEndingProps> = ({ onReplay }) => {
             {ENDING_CONTENT.message}
           </p>
 
-          <Button onClick={onReplay} variant="primary">
-            {ENDING_CONTENT.buttonText} 🔄
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              onClick={() => {
+                const text = encodeURIComponent(WA_CLAIM.message);
+                window.open(`https://wa.me/${WA_CLAIM.phoneNumber}?text=${text}`, "_blank");
+              }}
+              variant="primary"
+            >
+              {WA_CLAIM.buttonText}
+            </Button>
+            <Button onClick={onReplay} variant="secondary">
+              {ENDING_CONTENT.buttonText} 🔄
+            </Button>
+          </div>
         </motion.div>
 
         {/* WISH JAR (BOTOL KACA BINTANG HARAPAN) */}

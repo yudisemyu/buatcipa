@@ -61,7 +61,7 @@ export const InvitationScene: React.FC<InvitationSceneProps> = ({ onOpen }) => {
                 transition={{ duration: 0.3 }}
               >
                 <Button onClick={handleOpen} variant="primary">
-                  Open Letter 🤍
+                  Buka Hadiah kamu
                 </Button>
               </motion.div>
             ) : (
@@ -73,7 +73,7 @@ export const InvitationScene: React.FC<InvitationSceneProps> = ({ onOpen }) => {
                 transition={{ duration: 0.5 }}
               >
                 <p className="font-quote text-2xl text-accent-peach animate-pulse">
-                  Unfolding the stories...
+                  Membuka hadiahmu...
                 </p>
               </motion.div>
             )}

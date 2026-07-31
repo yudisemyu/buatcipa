@@ -28,9 +28,9 @@ export const VoiceAndGift: React.FC<VoiceAndGiftProps> = ({ onComplete }) => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <Tape rotation={4} className="-top-3 right-10" color="pink" />
-          <h3 className="font-heading text-2xl text-text-primary mb-2">A Special Gift</h3>
+          <h3 className="font-heading text-2xl text-text-primary mb-2">Hadiah Special</h3>
           <p className="font-sans text-sm text-text-secondary mb-6 text-center">
-            Click to open the gift box I prepared.
+            Klik buat buka hadiah yang aku siapin
           </p>
 
           <div className="flex flex-col items-center w-full">
@@ -79,7 +79,7 @@ export const VoiceAndGift: React.FC<VoiceAndGiftProps> = ({ onComplete }) => {
                   <ScratchCard giftMessage={GIFT_CONTENT.giftMessage} />
 
                   <Button onClick={onComplete} variant="primary" className="mt-8">
-                    See Final Ending ❤️
+                    liat ending beneran
                   </Button>
                 </motion.div>
               )}

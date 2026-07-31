@@ -144,100 +144,35 @@ export const MINI_GAME = {
 export const LETTER_CONTENT = {
   title: "Happy Birthday 🤍",
   // A long, heartwarming letter
-  content: `Dear Cipa,
+  content: `
 
-**Happy Birthday! 🤍🎂**
+happy birthday cipaa
 
-Hari ini adalah hari spesial buat ngerayain seseorang yang luar biasa, cantik, baik, lucu, dan tentunya... agak menyebalkan juga kadang-kadang. Tapi yaudah, namanya juga kamu. Mau gimana lagi, udah terlanjur sayang. 😔
+AKHIRNYAAAA 21 TAHUN..
 
-Aku bikin little universe kecil ini bukan karena aku tiba-tiba jadi web developer profesional yang jago bikin website romantis. Tapi karena aku pengen punya sesuatu yang bisa ngingetin kamu tentang perjalanan kita sampai sekarang. Walaupun kalau dipikir-pikir, perjalanan kita ini isinya lebih banyak makan, jalan-jalan, ngobrol nggak jelas, dan saling ganggu daripada hal-hal yang keren.
+HAHAHAHA nyusul juga tuh
 
-Aku masih inget banget cafe pertama yang kita datengin. Awalnya mungkin masih malu-malu, senyum-senyum nggak jelas, sok cool, padahal dalam hati mungkin sama-sama mikir,
+aku harap kamu sehat terus, makin cantik, makin imut mirip kaya ur idol hwhwhehwewh
 
-*"Ini orang bakal tahan nggak ya sama kelakuan gue?"*
+semoga cepet kelar kknnya trs bisa liburan yeyeyeyeyeyey(semoga ak diajak)
 
-Dan ternyata...
+semoga dimudahkan semua urusannya, cepet sidang, lulus secepetnya, bisa banggain semua orang orang tersayang aaamiiiiinn
 
-**Tahan.**
+semoga kamu selalu dikelilingi orang orang yang baik sama kamu, yang sayang sama kamu, dan selalu bikin kamu bahagiaaa
 
-Bahkan sampai sekarang.
+terimakasi udah mau ngeladenin aku, udah sabar ngadepin aku yang kadang ngeselin hehehehe(selalu deng kayanya)
 
-Hebat juga kamu.
-Aku kasih penghargaan khusus buat kamu karena berhasil bertahan sejauh ini. 🏆
+maaf aku ga bisa ngasih apa apa di hari spesial kamu, tapi aku harap kamu suka sama hadiah kecil kecilan ini
 
-Dari first date kita, makan bareng, ketemu di berbagai kesempatan, lari-larian kehujanan, sampai hari-hari sederhana yang mungkin kelihatannya biasa aja, ternyata semuanya jadi kenangan yang seru kalau diinget lagi.
+maaf kalo monoton, foto kita dikit banget aku bingung😔😔. semoga bisa nambah terus sampe akhirnya di pelaminan EHH
 
-Ada yang bikin ketawa, ada yang bikin malu kalau diinget, ada juga yang mungkin lebih baik kita pura-pura lupa aja. 🤫
+iloveu more and alwayssss
 
-Tapi dari semua itu, aku bersyukur banget bisa ngelewatin banyak hal bareng kamu.
+sincerely
 
-Kamu itu orang yang punya banyak banget hal yang aku suka. Kamu baik, perhatian, sabar, bisa bikin orang lain nyaman, dan punya jokes yang... ya... kadang lucu.
+yudis
 
-**Kadang.**
-
-Tapi gapapa, aku tetap ketawa kok.
-
-Bukan karena lucu.
-
-Tapi karena aku menghargai usaha kamu. 😭
-
-Aku harap selama kamu scroll-scroll website ini, kamu bisa senyum sendiri sambil nginget semua kejadian yang pernah kita lewatin. Kalau ada bagian yang bikin kamu ketawa, berarti misi aku berhasil. Kalau ada bagian yang bikin kamu terharu...
-
-**Maaf, itu tidak disengaja.**
-
-Di umur kamu yang baru ini, aku berharap kamu selalu bahagia, sehat, dimudahkan dalam segala urusan, dan bisa mendapatkan semua hal yang kamu impikan.
-
-Semoga semua yang kamu perjuangkan sekarang bisa berjalan lancar. Semoga kamu selalu punya alasan buat tersenyum, bahkan di hari-hari yang nggak terlalu baik.
-
-Dan semoga...
-
-**kamu tetap sabar menghadapi aku.**
-
-Karena kayaknya itu salah satu tantangan terbesar dalam hidup kamu. 😔🙏
-
-Aku juga mau bilang terima kasih karena udah hadir di hidup aku. Terima kasih karena udah jadi bagian dari banyak cerita dan kenangan yang sekarang bisa kita lihat lagi di sini.
-
-Aku nggak tahu nanti perjalanan kita bakal sejauh apa dan bakal ada cerita apa lagi yang kita lewatin. Tapi untuk sekarang, aku cuma senang karena dari sekian banyak orang di dunia ini, aku bisa ketemu sama kamu.
-
-Orang yang bisa diajak ngobrol sampai lupa waktu.
-
-Orang yang bisa diajak makan walaupun ujung-ujungnya bingung mau makan apa.
-
-Orang yang bisa diajak bercanda sampai lupa kalau besok ada kegiatan.
-
-Dan orang yang entah kenapa masih mau sama aku sampai sekarang.
-
-**Pertahankan ya. Jangan cari yang lain. Susah lho nyari orang sebaik aku.**
-
-*(Ini bercanda. Tapi kalau dipikir-pikir, bener juga.)* 😌
-
-Pokoknya, selamat ulang tahun ya, Cipa.
-
-Semoga hari ini kamu bahagia.
-
-Semoga tahun ini lebih banyak hal baik yang datang ke hidup kamu.
-
-Dan semoga nanti, suatu hari, kita bisa buka website ini lagi bareng-bareng sambil lihat semua kenangan yang ada di sini dan bilang,
-
-**"Gila... ternyata kita udah sejauh ini ya."**
-
-Terus lima menit kemudian kita debat gara-gara lupa siapa yang salah waktu first date.
-
-Tapi yaudah.
-
-Yang penting sekarang...
-
-**Happy Birthday, Cipa! 🤍**
-
-Semoga panjang umur, sehat selalu, makin cantik, makin bahagia, makin sukses...
-
-dan tentunya,
-
-**makin sayang sama aku.**
-
-Karena yang terakhir itu paling penting.
-
-🤍`,
+made with love`,
   maxWords: 1200,
   animationSpeed: 30, // ms per character
   allowSkip: true,
@@ -253,14 +188,20 @@ export const VOICE_MESSAGE = {
 export const GIFT_CONTENT = {
   type: "Surprise Message",
   illustration: "Gift Box",
-  buttonText: "Open My Gift",
+  buttonText: "buka hadiah aku dong",
   // The secret surprise message revealed upon opening the gift box
-  giftMessage: "Voucher Spesial: Jalan-jalan & Makan Malam Romantis Berdua! 🎫✨\n(Bisa diklaim kapan saja kamu senggang. Aku yang traktir!)",
+  giftMessage: "Voucher Spesial: Jalan-jalan sama aku HAHAHHAHAAHH🎫✨\n(Bisa diklaim di ending yaa)",
+};
+
+export const WA_CLAIM = {
+  phoneNumber: "6285325400414", // Ganti dengan nomor WA kamu (gunakan 62 di depan)
+  message: "mau klaim hadiah dong bup", // Pesan otomatis yang akan dikirim
+  buttonText: "Klaim hadiah di WA", // Teks tombol WA
 };
 
 export const ENDING_CONTENT = {
   title: "Happy Birthday ❤️",
-  subtitle: "Thank you for staying.",
-  message: "I hope this tiny website becomes one of the memories we smile about in the future.",
-  buttonText: "Replay Journey",
+  subtitle: "Makasih udah mau baca sampe sini.",
+  message: "aku harap ini bisa jadi salah satu alasan kamu senyum hari ini",
+  buttonText: "Ulangin",
 };

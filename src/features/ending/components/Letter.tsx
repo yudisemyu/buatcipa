@@ -72,7 +72,7 @@ export const Letter: React.FC<LetterProps> = ({ onComplete }) => {
         <div className="flex justify-between items-center mt-8 border-t border-[#F7ECE8] pt-6">
           {!isDone && LETTER_CONTENT.allowSkip ? (
             <Button onClick={handleSkip} variant="ghost" className="text-sm">
-              Skip typing ⏩
+              Lewati ⏩
             </Button>
           ) : (
             <div />
@@ -86,7 +86,7 @@ export const Letter: React.FC<LetterProps> = ({ onComplete }) => {
               className="w-full flex justify-center"
             >
               <Button onClick={onComplete} variant="primary">
-                Open Voice & Gift 🎁
+                Buka Kado 🎁
               </Button>
             </motion.div>
           )}

@@ -52,7 +52,7 @@ export const FakeEnding: React.FC<FakeEndingProps> = ({ onComplete }) => {
             exit={{ opacity: 0, filter: "blur(8px)" }}
             transition={{ duration: 1.5 }}
           >
-            The End
+            Tamat
           </motion.h2>
         )}
 
@@ -65,7 +65,7 @@ export const FakeEnding: React.FC<FakeEndingProps> = ({ onComplete }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2 }}
           >
-            ...or maybe not.
+            ...tapi boong.
           </motion.h3>
         )}
       </AnimatePresence>

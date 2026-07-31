@@ -220,7 +220,7 @@ export const BirthdayEnding: React.FC<BirthdayEndingProps> = ({ onReplay }) => {
             The Wish Jar 🫙✨
           </span>
           <p className="font-sans text-xs text-text-secondary mb-6">
-            Klik salah satu bintang di dalam botol untuk membuka harapan manis!
+            Klik salah satu buat buka harapan manis!
           </p>
 
           {/* Glass Jar Container */}

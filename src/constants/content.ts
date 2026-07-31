@@ -11,6 +11,8 @@ export const PASSWORD_QUESTION = {
   answer: ["kopi kenangan", "kopken", "Kopi Kenangan", "Kopken"],
   wrongAnswers: [
     "diinget inget lagi donk yang pertama banget",
+    "masa lupa sih",
+    "yang itu lohhh",
     "hmmzz",
   ],
   correctAnswer: "anjay masih inget",
@@ -137,8 +139,8 @@ export const MINI_GAME = {
   cardsCount: 12,
   pairsCount: 6,
   cardBackImage: "/images/stickers/heart.png", // We will style card back as pastel heart using CSS or inline SVG
-  rewardText: "You unlocked another memory.",
-  buttonText: "Continue",
+  rewardText: "Selamat udah berhasil nyelesaiin game yey.",
+  buttonText: "lanjutttt",
 };
 
 export const LETTER_CONTENT = {
@@ -196,7 +198,7 @@ export const GIFT_CONTENT = {
 export const WA_CLAIM = {
   phoneNumber: "6285325400414", // Ganti dengan nomor WA kamu (gunakan 62 di depan)
   message: "mau klaim hadiah dong bup", // Pesan otomatis yang akan dikirim
-  buttonText: "Klaim hadiah di WA", // Teks tombol WA
+  buttonText: "Klaim hadiah", // Teks tombol WA
 };
 
 export const ENDING_CONTENT = {
